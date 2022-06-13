@@ -8,11 +8,15 @@ ${SEARCH_TERM}    cute cat picture
 
 *** Keywords ***
 Accept Google Consent
-    Click Element    xpath://button/div[contains(text(), 'I agree')]
+    Click Element If Visible    xpath://button/div[contains(text(), 'I agree')]
+
+Close Google Sign in if shown
+    Click Element If Visible    No thanks
 
 *** Keywords ***
 Open Google search page
     Open Available Browser    ${GOOGLE_URL}
+    Close Google Sign in if shown
     Run Keyword And Ignore Error    Accept Google Consent
 
 *** Keywords ***
