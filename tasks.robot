@@ -20,8 +20,8 @@ Close Google Sign in if shown
 Open Google search page
     Open Available Browser    ${GOOGLE_URL}
     Close Google Sign in if shown
-    Reject Google Cookies
-    Accept Google Consent
+    Run Keyword And Ignore Error    Reject Google Cookies
+    Run Keyword And Ignore Error    Accept Google Consent
 
 *** Keywords ***
 Search for
