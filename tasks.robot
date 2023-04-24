@@ -39,7 +39,12 @@ Capture Image Result
 
 *** Tasks ***
 Execute Google image search and store the first result image
-    Open Google search page
-    Search for    ${SEARCH_TERM}
-    Capture Image Result
+    TRY
+        Open Google search page
+        Search for    ${SEARCH_TERM}
+        Capture Image Result
+    EXCEPT
+        Capture Page Screenshot     %{ROBOT_ARTIFACTS}${/}error.png 
+        Fail    Checkout the screenshot: error.png
+    END
     [Teardown]    Close Browser
