@@ -18,7 +18,12 @@ Close Google Sign in
 
 *** Keywords ***
 Open Google search page
-    Open Available Browser    ${GOOGLE_URL}
+    IF    %{USE_CHROME=''}
+        Open Available Browser    ${GOOGLE_URL}    browser_selection=Chrome
+        ...    download=${True}
+    ELSE
+        Open Available Browser    ${GOOGLE_URL}
+    END
     Run Keyword And Ignore Error    Close Google Sign in
     Run Keyword And Ignore Error    Reject Google Cookies
     Run Keyword And Ignore Error    Accept Google Consent
@@ -44,7 +49,7 @@ Execute Google image search and store the first result image
         Search for    ${SEARCH_TERM}
         Capture Image Result
     EXCEPT
-        Capture Page Screenshot     %{ROBOT_ARTIFACTS}${/}error.png 
+        Capture Page Screenshot     %{ROBOT_ARTIFACTS}${/}error.png
         Fail    Checkout the screenshot: error.png
     END
     [Teardown]    Close Browser

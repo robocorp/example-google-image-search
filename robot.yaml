@@ -1,5 +1,7 @@
 tasks:
-  Image search:
+  Image Search:
+    robotTaskName: Execute Google image search and store the first result image
+  Debug Image Search:
     command:
       - python
       - -m
@@ -8,6 +10,8 @@ tasks:
       - NONE
       - -d
       - output
+      - -L
+      - TRACE
       - --logtitle
       - Task log
       - tasks.robot
