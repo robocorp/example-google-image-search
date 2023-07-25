@@ -18,7 +18,7 @@ Close Google Sign in
 
 *** Keywords ***
 Open Google search page
-    IF    "%{USE_CHROME=''}"
+    IF    %{USE_CHROME=''}
         Open Available Browser    ${GOOGLE_URL}    browser_selection=Chrome
         ...    download=${True}
     ELSE
