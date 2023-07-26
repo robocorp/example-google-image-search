@@ -7,6 +7,7 @@ Executes Google image search and stores the first result image.
 
 If you're experiencing issues on a Mac while using Chrome, please set the following
 environment variables in the [env.json](./devdata/env.json) file:
+
 ```JSON
 {
     "USE_CHROME": "1",
