@@ -1,10 +1,11 @@
 *** Settings ***
 Documentation     Executes Google image search and stores the first result image.
 Library           RPA.Browser.Selenium
+Library           OperatingSystem
 
 *** Variables ***
 ${GOOGLE_URL}     https://google.com/?hl=en
-${SEARCH_TERM}    cute cat picture
+${SEARCH_TERM}    cute monkey picture
 
 *** Keywords ***
 Reject Google Cookies
@@ -18,7 +19,8 @@ Close Google Sign in
 
 *** Keywords ***
 Open Google search page
-    IF    %{USE_CHROME=''}
+    ${use_chrome} =    Get Environment Variable    USE_CHROME    ${EMPTY}
+    IF    "${use_chrome}" != ""
         Open Available Browser    ${GOOGLE_URL}    browser_selection=Chrome
         ...    download=${True}
     ELSE
