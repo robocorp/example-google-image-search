@@ -9,6 +9,7 @@ dependencies:
   # Define conda-forge packages here -> https://anaconda.org/search
   # When available, prefer the conda-forge packages over pip as installations are more efficient.
   - python=3.10.12              # https://pyreadiness.org/3.9/
+  - truststore=0.8.0
   - pip=23.2.1                  # https://pip.pypa.io/en/stable/news/
   - pip:
     # Define pip packages here -> https://pypi.org/
