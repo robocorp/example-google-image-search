@@ -21,4 +21,3 @@ detect your browser location automatically, you can set one explicitly with
 `RPA_SELENIUM_BINARY_LOCATION`.
 
 This requires `rpaframework>=24.1.0`.
-
